@@ -72,6 +72,7 @@ def update_score(current_score: int, outcome: str, attempt_number: int):
 
     return current_score
 
+
 st.set_page_config(page_title="Glitchy Guesser", page_icon="🎮")
 
 st.title("🎮 Game Glitch Investigator")
@@ -84,6 +85,11 @@ difficulty = st.sidebar.selectbox(
     ["Easy", "Normal", "Hard"],
     index=1,
 )
+
+#FIXME: add function to help with clearing input text book after submit button clicked
+def clear_guess():
+    st.session_state.submitted_guess = st.session_state[f"guess_input_{difficulty}"]
+    st.session_state[f"guess_input_{difficulty}"] = ""
 
 attempt_limit_map = {
     "Easy": 6,
@@ -133,7 +139,8 @@ raw_guess = st.text_input(
 
 col1, col2, col3 = st.columns(3)
 with col1:
-    submit = st.button("Submit Guess 🚀")
+    #FIXME: Add second parameter to clear input after "Submit Guess" button clicked
+    submit = st.button("Submit Guess 🚀", on_click=clear_guess)
 with col2:
     new_game = st.button("New Game 🔁")
 with col3:
@@ -153,12 +160,14 @@ if st.session_state.status != "playing":
     st.stop()
 
 if submit:
+    saved_guess = st.session_state.get("submitted_guess", "")
+    
     st.session_state.attempts += 1
 
-    ok, guess_int, err = parse_guess(raw_guess)
+    ok, guess_int, err = parse_guess(saved_guess)
 
     if not ok:
-        st.session_state.history.append(raw_guess)
+        st.session_state.history.append(saved_guess)
         st.error(err)
     else:
         st.session_state.history.append(guess_int)

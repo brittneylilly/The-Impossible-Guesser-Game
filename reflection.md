@@ -9,12 +9,12 @@ The game screen had "Make a guess" and then the subtext to that said "Guess a nu
 
 - List at least two concrete bugs you noticed at the start  
   (for example: "the hints were backwards").
-1. When i enter in 1 or 0 as my guess it says go lower
-2. When i enter in 200 is says go higher
-3. when I click New Game it doesn’t start over new game, have to restart website
+1. When i enter in 1 or 0 as my guess it says go lower -- Fixed
+2. When i enter in 200 is says go higher -- Fixed
 4. when i click New Game, my last guess entry stays in the input box. It doesn’t clear. 
 5. when “show hint” isn’t clicked it doesn’t show if i got guess correct or incorrect. 
 6. when new game starts, sometimes attempts left says 7 and sometimes attempts lefts say 8
+7. when I enter a guess, I have to manually clear out my entry in order to enter next entry - Fixed
 
 
 **Bug Reproduction Log**
