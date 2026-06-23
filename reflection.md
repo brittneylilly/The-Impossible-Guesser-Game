@@ -40,9 +40,13 @@ Document at least 3 bugs you found. Add rows as needed.
 ## 3. Debugging and testing your fixes
 
 - How did you decide whether a bug was really fixed?
+1. The first bug I fixed was to make the hint show the correctly (Go Higher or Go Lower), for guesses entered that ranged from negative infinity to 109. How i decided that this bug was actually fixed is that after updating the applicable code section in app.py, I ended the local host and re-ran the game and entered in guess values that were in between the ranges I was testing for, and checked if I received the expected output.
+2. The second bug I fixed was related to the game accepting guesses that were less than 1 and greater than 100 and giving incorrect hints for some of these numbers. I added code logic to throw an error message when integers less than 1 and greater than 100 are entered.
+
 - Describe at least one test you ran (manual or using pytest)  
   and what it showed you about your code.
 - Did AI help you design or understand any tests? How?
+No
 
 ---s
 
@@ -56,5 +60,11 @@ Document at least 3 bugs you found. Add rows as needed.
 
 - What is one habit or strategy from this project that you want to reuse in future labs or projects?
   - This could be a testing habit, a prompting strategy, or a way you used Git.
+
+Documenting the bugs I see in a table, and taking an incremental approach to fixing each bug one by one and testing
+as I go.
+
 - What is one thing you would do differently next time you work with AI on a coding task?
+
+
 - In one or two sentences, describe how this project changed the way you think about AI generated code.

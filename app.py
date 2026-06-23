@@ -25,6 +25,10 @@ def parse_guess(raw: str):
             value = int(raw)
     except Exception:
         return False, None, "That is not a number."
+    
+    # FIXME: Add Logic to Only Accept Numbers between 1 and 100 as a guess
+    if value > 100 or value < 1:
+        return False, None, "Invalid Entry. Guess must be between 1 and 100." 
 
     return True, value, None
 
