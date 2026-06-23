@@ -5,8 +5,17 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 ## 1. What was broken when you started?
 
 - What did the game look like the first time you ran it?
+The game screen had "Make a guess" and then the subtext to that said "Guess a number between 1 and 100. Attempts left: 7
+
 - List at least two concrete bugs you noticed at the start  
   (for example: "the hints were backwards").
+1. When i enter in 1 or 0 as my guess it says go lower
+2. When i enter in 200 is says go higher
+3. when I click New Game it doesn’t start over new game, have to restart website
+4. when i click New Game, my last guess entry stays in the input box. It doesn’t clear. 
+5. when “show hint” isn’t clicked it doesn’t show if i got guess correct or incorrect. 
+6. when new game starts, sometimes attempts left says 7 and sometimes attempts lefts say 8
+
 
 **Bug Reproduction Log**
 
@@ -14,9 +23,9 @@ Document at least 3 bugs you found. Add rows as needed.
 
 | Input | Expected Behavior | Actual Behavior | Console Output / Error |
 |-------|-------------------|-----------------|------------------------|
-| | | | |
-| | | | |
-| | | | |
+| 1     | "Go Higher"         "Go Lower"          None
+| 0     | "Go Higher"         "Go Lower"          None  
+| 200   | "Go Lower"          "Go Higher"         None
 
 ---
 
@@ -35,7 +44,7 @@ Document at least 3 bugs you found. Add rows as needed.
   and what it showed you about your code.
 - Did AI help you design or understand any tests? How?
 
----
+---s
 
 ## 4. What did you learn about Streamlit and state?
 

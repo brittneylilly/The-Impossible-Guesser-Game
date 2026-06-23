@@ -35,15 +35,19 @@ def check_guess(guess, secret):
 
     try:
         if guess > secret:
+            #FIXME: Logic Break Here. If guess > secret, should return "Too High", "📈 Go LOWER!"
             return "Too High", "📈 Go HIGHER!"
         else:
+            #FIXME: Logic Break Here. If guess < secret, should return "Too Low", "📉 Go HIGHER!" 
             return "Too Low", "📉 Go LOWER!"
     except TypeError:
         g = str(guess)
         if g == secret:
             return "Win", "🎉 Correct!"
         if g > secret:
+            #FIXME: Logic Break Here. If g > secret, should return "Too High", "📈 Go LOWER!"
             return "Too High", "📈 Go HIGHER!"
+        #FIXME: Logic Break Here. If g < secret, should return "Too Low", "📉 Go HIGHER!" 
         return "Too Low", "📉 Go LOWER!"
 
 
